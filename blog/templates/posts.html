@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+     {% if post.image %}
+         <img id="blogpic" src="/media/{{ post.image }}">
+     {% endif %}
+    <h2>{{ post.title}}</h2>
+    <p>{{ post.content | linebreaks }}</p>
+    <p>Tag: {{ post.tag }}</p>
+    <p>Views: {{ post.views }}</p>
+    <button class="btn btn-default" onclick="location.href='/blog/'">Back to Blog</button>
+{% endblock %}
