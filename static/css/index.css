@@ -1,0 +1,15 @@
+.carousel-inner> .item > img{
+	height:520px;
+	margin:auto;
+	width:80%;
+}
+
+
+html{
+    background-color:#2d293d ;
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: darkgoldenrod;
+}

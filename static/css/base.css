@@ -1,0 +1,27 @@
+header{
+    background-color:#17151f ;
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+
+nav {background-color:#17151f ;}
+
+nav-pills.onhover{
+    background-color:#17151f ;
+}
+nav li a{
+    color: darkgoldenrod;
+    text-decoration: none;
+}
+nav.onhover{
+    color: #f1b10e;
+    text-decoration: none;
+}
+html{
+    background-color:#2d293d ;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: darkgoldenrod;
+}

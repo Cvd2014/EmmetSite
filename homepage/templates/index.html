@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="container">
+  <div id="MyCarousel" class="carousel slide" data-ride="carousel">
+	<!--Indicators-->
+	<ol class="carousel-indicators">
+		<li data-target="#MyCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#MyCarousel" data-slide-to="1"></li>
+		<li data-target="#MyCarousel" data-slide-to="2"></li>
+		<li data-target="#MyCarousel" data-slide-to="3"></li>
+		<li data-target="#MyCarousel" data-slide-to="4"></li>
+	</ol>
+
+
+	<!--slide wrapper-->
+	<div class="carousel-inner" >
+		<figure class="item active">
+			<img src="http://i100.independent.co.uk/image/2731-10fsb2p.jpg">
+		</figure>
+		<figure class="item">
+			<img src="http://scienceblogs.com/startswithabang/files/2014/11/decam_ngc1365-590x399.jpeg">
+		</figure>
+		<figure class="item">
+			<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQy-iZbL_kMUYWzS-5KFq9cAklfTqkWXdg1Ae_GIjoebv59mbC_">
+		</figure>
+		<figure class="item">
+			<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSPoUZIIC0HeczSO23kQl6vzrzgieGmYr20BVxFzr34FqZbQcUBsJIDp5w">
+		</figure>
+		<figure class="item">
+			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGo5EWxr5ps_SRYRqdAiTsDaoePoWJN4JJfRbyXF2LgIDPq7LS">
+		</figure>
+	</div><!--close slide wrapper-->
+
+	<!--controls-->
+	</div>
+  </section><!--carousel-->
+  <article>
+  	  <div class='col-sm-8'>
+  		<h2 > Tradition, Service, Friendship</h2>
+  		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum </p>
+  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum 	 dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  	  </div>
+  	</article>
+    <div class='col-sm-4'>
+ 		<h3>Recent Blog post</h3>
+                <h4>{{ last_post.title }}</h4>
+                <p>{{ last_post.content|linebreaks|truncatewords:30 }}</p>
+                <button class=" btn btn-default" onclick="location.href={{ last_post.id }}">Read More</button>
+        <hr>
+        <h3>Recent Article</h3>
+                <h4>{{ last_article.title }}</h4>
+                <p>{{ last_article.content|linebreaks|truncatewords:50 }}</p>
+                <p>{{ last_article.url }}</p>
+        <hr>
+        <h3></h3>
+
+ 	</div>
+
+
+{% endblock %}
