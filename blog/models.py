@@ -28,5 +28,6 @@ class Article(models.Model):
     description = models.TextField()
     datePublished = models.DateTimeField(blank=True, null=True)
 
+
     def __str__(self):
         return self.title

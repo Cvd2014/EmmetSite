@@ -1,17 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
   <section class="container">
-  <div id="MyCarousel" class="carousel slide" data-ride="carousel">
-	<!--Indicators-->
-	<ol class="carousel-indicators">
-		<li data-target="#MyCarousel" data-slide-to="0" class="active"></li>
-		<li data-target="#MyCarousel" data-slide-to="1"></li>
-		<li data-target="#MyCarousel" data-slide-to="2"></li>
-		<li data-target="#MyCarousel" data-slide-to="3"></li>
-		<li data-target="#MyCarousel" data-slide-to="4"></li>
-	</ol>
-
-
+  <div id="MyCarousel" class="carousel slide " data-ride="carousel">
 	<!--slide wrapper-->
 	<div class="carousel-inner" >
 		<figure class="item active">
@@ -30,9 +20,6 @@
 			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRGo5EWxr5ps_SRYRqdAiTsDaoePoWJN4JJfRbyXF2LgIDPq7LS">
 		</figure>
 	</div><!--close slide wrapper-->
-
-	<!--controls-->
-	</div>
   </section><!--carousel-->
   <article>
   	  <div class='col-sm-8'>
@@ -42,36 +29,44 @@
   			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
   			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
   			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum </p>
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        </p>
   		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
   			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
   			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum 	 dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
   			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
   			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        </p>
   		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
   			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
   			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
   			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
   	  </div>
   	</article>
     <div class='col-sm-4'>
  		<h3>Recent Blog post</h3>
-                <h4>{{ last_post.title }}</h4>
+                <h4 class="sidebar-title">{{ last_post.title }}</h4>
+                <hr>
                 <p>{{ last_post.content|linebreaks|truncatewords:30 }}</p>
                 <button class=" btn btn-default" onclick="location.href={{ last_post.id }}">Read More</button>
         <hr>
         <h3>Recent Article</h3>
-                <h4>{{ last_article.title }}</h4>
+                <h4 class="sidebar-title">{{ last_article.title }}</h4>
+                <hr>
                 <p>{{ last_article.content|linebreaks|truncatewords:50 }}</p>
-                <p>{{ last_article.url }}</p>
+                <button class="btn btn-default" onclick="location.href={{ last_article.url }}">To Article</button>
         <hr>
         <h3></h3>
 

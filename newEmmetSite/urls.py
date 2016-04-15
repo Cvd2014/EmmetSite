@@ -17,9 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from homepage import views as homeViews
 from blog import views as blogViews
+from settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',homeViews.get_index),
-    #url(r'^blog/$',blogViews.post_list)
+    url(r'^blog/$',blogViews.post_list),
+    #url(r'^blog/(?P<id>\d+)/$', blogViews.post_detail),
+    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':MEDIA_ROOT})
 ]
