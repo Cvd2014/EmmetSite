@@ -60,7 +60,7 @@
                 <h4 class="sidebar-title">{{ last_post.title }}</h4>
                 <hr>
                 <p>{{ last_post.content|linebreaks|truncatewords:30 }}</p>
-                <button class=" btn btn-default" onclick="location.href={{ last_post.id }}">Read More</button>
+                <button class=" btn btn-default" onclick="location.href='/blog/{{ last_post.id }}'">Read More</button>
         <hr>
         <h3>Recent Article</h3>
                 <h4 class="sidebar-title">{{ last_article.title }}</h4>

@@ -24,5 +24,8 @@ urlpatterns = [
     url(r'^$',homeViews.get_index),
     url(r'^blog/$',blogViews.post_list),
     url(r'^blog/(?P<id>\d+)/$', blogViews.post_detail),
-    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':MEDIA_ROOT})
+    url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':MEDIA_ROOT}),
+    url(r'^articles/$',blogViews.article_list)
+    #url(r'^articles/(?P<id>\d+)/$', blogViews.article_detail)
+
 ]

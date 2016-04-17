@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for article in articles %}
+        <div class="row">
+            <br>
+            <div class ="col-md-10 col-sm-9">
+                <h3>{{ article.title }}</h3>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <p>{{article.detail|linebreaks|truncatewords:30 }}</p>
+                        <p>Date Published:{{article.datePublished  }}</p>
+                        <p>Publication:{{ article.publication }}</p>
+                        <button class=" btn btn-default" onclick="location.href={{ article.id }}">Read More</button>
+                        <button class=" btn btn-default" onclick="window.open('{{ article.url }}')">Read in Original Webpage</button>
+
+
+
+                    </div>
+                </div>
+              <br><br>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+    <h5> Like what you have read? </h5>
+    <p>
+        To commision a piece for your publication please click the <a href="/contact">Contact</a> link, either here in the menu bar
+    </p>
+{% endblock %}

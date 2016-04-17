@@ -13,6 +13,7 @@ class Post(models.Model):
     dateCreated = models.DateTimeField(default=timezone.now)
     datePublished = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(upload_to="images", blank=True, null=True)
+    views=models.IntegerField(default=0)
 
     def publish(self):
         self.datePublished = timezone.now()
@@ -27,6 +28,7 @@ class Article(models.Model):
     url = models.CharField(max_length=500)
     description = models.TextField()
     datePublished = models.DateTimeField(blank=True, null=True)
+    publication=models.CharField(max_length=200, default='abc')
 
     def __str__(self):
         return self.title
