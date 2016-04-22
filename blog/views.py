@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-from .models import Post, Article
+from .models import Post, Article, Video
 
 
 # Create your views here.
@@ -23,8 +23,8 @@ def article_list(request):
     articles = Article.objects.filter(datePublished__lte=timezone.now()).order_by('datePublished')
     return render(request, "article.html", {'articles': articles})
 
+def video_list(request):
+    videos= Video.objects.order_by('catagory')
+    return render(request, "videos.html",{'videos':videos})
 
-def article_detail(request, id):
-    article = get_object_or_404(Article, pk=id)
-    article.save()
-    return render(request, 'article_detail.html', {'article': article})
+

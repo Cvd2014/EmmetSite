@@ -13,7 +13,7 @@ class Post(models.Model):
     dateCreated = models.DateTimeField(default=timezone.now)
     datePublished = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(upload_to="images", blank=True, null=True)
-    views=models.IntegerField(default=0)
+    views = models.IntegerField(default=0)
 
     def publish(self):
         self.datePublished = timezone.now()
@@ -28,7 +28,18 @@ class Article(models.Model):
     url = models.CharField(max_length=500)
     description = models.TextField()
     datePublished = models.DateTimeField(blank=True, null=True)
-    publication=models.CharField(max_length=200, default='abc')
+    publication = models.CharField(max_length=200, default='abc')
+
+    def __str__(self):
+        return self.title
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=200)
+    url = models.CharField(max_length=500)
+    caption = models.CharField(max_length=200)
+    catagory = models.CharField(max_length=200)
+    platform = models.CharField(max_length=200,default='youtube')
 
     def __str__(self):
         return self.title

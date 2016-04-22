@@ -10,7 +10,8 @@
                         <p>{{article.detail|linebreaks|truncatewords:30 }}</p>
                         <p>Date Published:{{article.datePublished  }}</p>
                         <p>Publication:{{ article.publication }}</p>
-                        <button class=" btn btn-default" onclick="location.href={{ article.id }}">Read More</button>
+                        <p>Description: </p>
+                        <p>{{ article.description }}</p>
                         <button class=" btn btn-default" onclick="window.open('{{ article.url }}')">Read in Original Webpage</button>
 
 

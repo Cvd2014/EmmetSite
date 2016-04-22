@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Videos</h2>
+    <div class="row">
+
+        {% for video in videos %}
+            <div class="col-sm-4">
+            <h3>{{ video.catagory }}</h3>
+            <h4>{{ video.title }}</h4>
+                {% if video.platform == 'youtube' %}
+                    <iframe class='videos' src="https:/www.youtube.com/embed/{{ video.url }}"></iframe>
+                {% elif video.platform == 'vimeo' %}
+                    <iframe class='videos' src="https://player.vimeo.com/video/{{ video.url }}"></iframe>
+                {% else %}
+                     <iframe class='videos' src="{{ video.url }}"></iframe>
+                {% endif %}
+                <p>{{ video.caption }}</p>
+
+                </div>
+            {% endfor %}
+
+    </div>
+{% endblock %}
