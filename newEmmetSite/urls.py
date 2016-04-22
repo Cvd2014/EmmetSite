@@ -18,6 +18,7 @@ from django.contrib import admin
 from homepage import views as homeViews
 from blog import views as blogViews
 from settings import MEDIA_ROOT
+from contact import views as contact_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,6 +28,8 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':MEDIA_ROOT}),
     url(r'^articles/$',blogViews.article_list),
     url(r'^pages/',include('django.contrib.flatpages.urls')),
-    url(r'^videos',blogViews.video_list)
+    url(r'^videos',blogViews.video_list),
+    url(r'^contact/$', contact_views.email,name='email'),
+    url(r'^thanks/$',contact_views.thanks,name='thanks'),
 
 ]
